@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!--
+Ready2Search(http://ready.to/search/en/) search setting of OpenSearch
+
+the search name: Phylogeny
+the front of search term: http://phylogeny.revealedsingularity.net/search.php?q=search&search=
+the back of  search term: 
+description of the search: Compiled Family Level Extant Phylogeny
+optional XML element: 
+input encoding: UTF-8
+output encoding: 
+image text: iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACh0lEQVQ4jU3TT29UZQCF8d/7596Z6bS0FFqKQKjEYNCSaKJEjTEudGVi4sqvw2eSuDNsNGFjoiIxEYOkhU2htMpQZubeufd10S5cPMlZnpOTJ+xQljDG0ikDjE4zvMYrTHGMAzzDv8hjrGIdm7ia2dlm+wqjTDVkNgv2D4vHuzw44CEyCsJXlE1cw0fbwa0vkmHdiYNo/rKYT3p5FKUqSlXx9++9O/eKXzoeIa/jKj67Hn38zUDoOqUpSojqM+QhYiXGTumD67eib9eI33faQj6PG8t8+PVYGial65WyIBT9rBVSoE5KT1pKSldc2Sk+fRLs/rYQN/H+JyPDtaw0c2XRi4NIStJSRcxiHcVBpZ/3Yp3ElbGbX655KxO3ai7eXCFVpCyUhW7aiCkoHXFUi3WlzBuxKuSodIy3ht65FMWVIYOVoLQLYlaqkVBnYVCRohCKfr4Ql5eFwUDfRKEasLplfXMoNh1lPqWEk2OauRDSSYtzW+K5DSElFH1bxPGAXDGfqOsgTma8niS6hbj+BiEKS8vS6llxdUWZL8TNLXFlVbz4pnDhGqUQopcvGvGo42ivEUa1/nBf30Vh7aJw6Yb+4Jl+cqS0HfVYyEm49jkpavafe/qklZ/g/k+vXX6vFtpO0FJm2p/vaqekTJztSaOsxKF0/hHt1N69ib1j0hVuxykb7cLm24mm0704VAqpDkIMhKJ71Qql4flDh4+nfrjTeNiTNrjd4/hp70zXWb9QxBw4mSn0vdJ2Qk5i5nB34e53Cw9m7CHvo0IoTH/svPsnOx8kl69X6pVM0yqT1tGzhT9+Le7/xW7P01Mjwzrl7KmJG6dWnsP5wMaYnJkcc9DyjxOO/sd/Xh8NRgiIQ1EAAAAASUVORK5CYII=
+
+setting URL: http://ready.to/search/en/?sna=Phylogeny&prf=http%3A%2F%2Fphylogeny.revealedsingularity.net%2Fsearch.php%3Fq%3Dsearch%26amp%3Bsearch%3D&des=Compiled+Family+Level+Extant+Phylogeny&img=iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACh0lEQVQ4jU3TT29UZQCF8d/7596Z6bS0FFqKQKjEYNCSaKJEjTEudGVi4sqvw2eSuDNsNGFjoiIxEYOkhU2htMpQZubeufd10S5cPMlZnpOTJ+xQljDG0ikDjE4zvMYrTHGMAzzDv8hjrGIdm7ia2dlm+wqjTDVkNgv2D4vHuzw44CEyCsJXlE1cw0fbwa0vkmHdiYNo/rKYT3p5FKUqSlXx9++9O/eKXzoeIa/jKj67Hn38zUDoOqUpSojqM+QhYiXGTumD67eib9eI33faQj6PG8t8+PVYGial65WyIBT9rBVSoE5KT1pKSldc2Sk+fRLs/rYQN/H+JyPDtaw0c2XRi4NIStJSRcxiHcVBpZ/3Yp3ElbGbX655KxO3ai7eXCFVpCyUhW7aiCkoHXFUi3WlzBuxKuSodIy3ht65FMWVIYOVoLQLYlaqkVBnYVCRohCKfr4Ql5eFwUDfRKEasLplfXMoNh1lPqWEk2OauRDSSYtzW+K5DSElFH1bxPGAXDGfqOsgTma8niS6hbj+BiEKS8vS6llxdUWZL8TNLXFlVbz4pnDhGqUQopcvGvGo42ivEUa1/nBf30Vh7aJw6Yb+4Jl+cqS0HfVYyEm49jkpavafe/qklZ/g/k+vXX6vFtpO0FJm2p/vaqekTJztSaOsxKF0/hHt1N69ib1j0hVuxykb7cLm24mm0704VAqpDkIMhKJ71Qql4flDh4+nfrjTeNiTNrjd4/hp70zXWb9QxBw4mSn0vdJ2Qk5i5nB34e53Cw9m7CHvo0IoTH/svPsnOx8kl69X6pVM0yqT1tGzhT9+Le7/xW7P01Mjwzrl7KmJG6dWnsP5wMaYnJkcc9DyjxOO/sd/Xh8NRgiIQ1EAAAAASUVORK5CYII=&in=utf&ou=ono&mod=pn
+
+-->
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+     <ShortName>Phylogeny</ShortName>
+     <Description>Compiled Family Level Extant Phylogeny</Description>
+     <Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACh0lEQVQ4jU3TT29UZQCF8d/7596Z6bS0FFqKQKjEYNCSaKJEjTEudGVi4sqvw2eSuDNsNGFjoiIxEYOkhU2htMpQZubeufd10S5cPMlZnpOTJ+xQljDG0ikDjE4zvMYrTHGMAzzDv8hjrGIdm7ia2dlm+wqjTDVkNgv2D4vHuzw44CEyCsJXlE1cw0fbwa0vkmHdiYNo/rKYT3p5FKUqSlXx9++9O/eKXzoeIa/jKj67Hn38zUDoOqUpSojqM+QhYiXGTumD67eib9eI33faQj6PG8t8+PVYGial65WyIBT9rBVSoE5KT1pKSldc2Sk+fRLs/rYQN/H+JyPDtaw0c2XRi4NIStJSRcxiHcVBpZ/3Yp3ElbGbX655KxO3ai7eXCFVpCyUhW7aiCkoHXFUi3WlzBuxKuSodIy3ht65FMWVIYOVoLQLYlaqkVBnYVCRohCKfr4Ql5eFwUDfRKEasLplfXMoNh1lPqWEk2OauRDSSYtzW+K5DSElFH1bxPGAXDGfqOsgTma8niS6hbj+BiEKS8vS6llxdUWZL8TNLXFlVbz4pnDhGqUQopcvGvGo42ivEUa1/nBf30Vh7aJw6Yb+4Jl+cqS0HfVYyEm49jkpavafe/qklZ/g/k+vXX6vFtpO0FJm2p/vaqekTJztSaOsxKF0/hHt1N69ib1j0hVuxykb7cLm24mm0704VAqpDkIMhKJ71Qql4flDh4+nfrjTeNiTNrjd4/hp70zXWb9QxBw4mSn0vdJ2Qk5i5nB34e53Cw9m7CHvo0IoTH/svPsnOx8kl69X6pVM0yqT1tGzhT9+Le7/xW7P01Mjwzrl7KmJG6dWnsP5wMaYnJkcc9DyjxOO/sd/Xh8NRgiIQ1EAAAAASUVORK5CYII=</Image>
+     <InputEncoding>UTF-8</InputEncoding>
+     <Url type="text/html" template="http://phylogeny.revealedsingularity.net/search.php?q=search&amp;search={searchTerms}"/>
+</OpenSearchDescription>

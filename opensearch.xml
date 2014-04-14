@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!--
+Ready2Search(http://ready.to/search/en/) search setting of OpenSearch
+
+the search name: Phylogeny
+the front of search term: http://phylogeny.revealedsingularity.net/search.php?q=search&search=
+the back of  search term: 
+description of the search: Compiled Family Level Extant Phylogeny
+optional XML element: 
+input encoding: UTF-8
+output encoding: 
+image text: 
+
+setting URL: http://ready.to/search/en/?sna=Phylogeny&prf=http%3A%2F%2Fphylogeny.revealedsingularity.net%2Fsearch.php%3Fq%3Dsearch%26amp%3Bsearch%3D&des=Compiled+Family+Level+Extant+Phylogeny&in=utf&ou=ono&mod=pn
+
+-->
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+     <ShortName>Phylogeny</ShortName>
+     <Description>Compiled Family Level Extant Phylogeny</Description>
+     <Image width="16" height="16">data:image/x-icon;base64,R0lGODlhEAAQAOMAAAAAABgYtRgYrRgYlBBSMcaEMQhKKTFaKcZ7Mb17MRBKKYxzKQAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAQABAAAARGEMhAq7y36iBwphjXhaAnnKR3DUOqAqyrxt8Lt18w05fAYawBQeULBguGA9E4MCASB4XtYnAuDsopoJqASrVVBMKglVSrEQA7</Image>
+     <InputEncoding>UTF-8</InputEncoding>
+     <Url type="text/html" template="http://phylogeny.revealedsingularity.net/search.php?q=search&amp;search={searchTerms}"/>
+</OpenSearchDescription>

@@ -1,0 +1,150 @@
+/*
+Print layout CSS for the Macro site.  
+Current "Understanding Evolution" look-alike.
+Be sure to check CSS for any hard-links to image files.
+Current site URL: http://beta.revealedsingularity.net
+*/
+
+
+/*
+ ***********************
+ Body, Font Types, and Footer
+ ***********************
+ */
+body
+{
+    font-family:Calibri,Times,Tahoma, Verdana, Arial, Helvetica;
+    font-size: 11pt;
+}
+h1
+{
+    font-size:13pt;
+}
+.subtitle
+{
+    font-size:10pt;
+}
+.small
+{
+    font-size:4pt;
+}
+a:link,a:visited
+{
+    font-weight:bold;
+    color:black;
+    text-decoration:none;
+}
+a:hover
+{
+    color:#D17D1E;
+}
+a:link.hidden, a:hover.hidden, a:visited.hidden
+{
+    text-decoration:none;
+    color:black;
+}
+p.footer
+{
+    font-size:9pt;
+    display:none;
+}
+p.indcap
+{
+    font-size:9pt;
+    clear:both;
+    text-align:right;
+}
+div.container
+{
+    margin-right:auto;
+    margin-left:auto;
+}
+.bannertd
+{
+    width:0;
+    display:none;
+}
+tt {display:none;}
+/*
+ ***********************
+ Content Table
+ ***********************
+ */
+
+table.content
+{
+    width:auto;
+    background-color:white;
+    border:0;
+    border-collapse:collapse;
+}
+td.content
+{
+    padding:5px;
+    margin-top:0px;
+    padding-top:0px;
+    border-bottom-width:1px;
+    
+}
+#indcontainer
+{
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+}
+.announce
+{
+    font-size:14pt;
+    /* font-weight:bold; */
+    text-transform:capitalize;
+}
+/*
+ **********************
+ Phylogenetic Navigation
+ **********************
+ */
+table.phylo
+{
+    margin-left:12px;
+    margin-right:auto;
+    margin-top:0px;
+    margin-bottom:0px;
+    border-style:none;
+    border-width:0px;
+    border:none;
+    border-collapse:collapse;
+    padding:3px;
+    padding-top:0px;
+    padding-bottom:0px;
+    
+}
+td.phylo1
+{
+    padding:5px;
+}
+td.close
+{
+    padding:5px;
+    vertical-align:top;
+}
+tr.close
+{
+    background-image:url('../images/phylobottom.png');
+    background-repeat:no-repeat;
+    background-position:top left;
+    padding:0px;
+    margin:0px;
+}
+tr.phyloline
+{
+    background-image:url('../images/phylobar.png');
+    background-repeat:repeat-y;
+    background-position:top left;
+    padding:0px;
+    margin:0px;
+}
+ul.phyloart
+{
+    margin:0px;
+    margin-left:1em;
+}

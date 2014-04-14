@@ -1,0 +1,331 @@
+/*
+Main Web CSS for the Macro site.  
+Current "Understanding Evolution" look-alike.
+Be sure to check CSS for any hard-links to image files.
+Current site URL: http://beta.revealedsingularity.net
+*/
+
+
+/*
+***********************
+Body, Font Types, and Footer
+***********************
+*/
+body
+	{
+		font-family:Helvetica, Calibri,Tahoma, Verdana, Arial, Cambria, Times, sans-serif;
+		font-size: 11pt;
+		/* background-color:#E0E0E0; /* #F8F8F0 */
+	}
+h1
+	{
+		color:#336699;/*#0664F3;*/
+		font-size:18pt;
+		text-indent:.5em;
+		text-shadow: 3px 3px 6px #E0E0E0;
+		text-align:center;
+	}
+h1 a:link, h1 a:visited
+	{
+		color:white;/*#0664F3;*/
+		text-decoration:none;
+	}
+h1 a:hover
+	{
+		color:#F2EEEA;/*#0664F3;*//*#407589;*/
+		text-decoration:none;
+	}
+.subtitle
+	{
+		color:white;
+		font-size:13pt;
+		margin-left:3em;
+		margin-top:-4em;
+	}
+.small
+	{
+		font-size:4pt;
+	}
+a:link,a:visited
+	{
+		color: #336699; /*#55858C;*/
+	}
+a:hover
+	{
+		color:black;
+		background: #EDF1F4;
+	}
+a:link.hidden, a:hover.hidden, a:visited.hidden
+	{
+		text-decoration:none;
+		color:black;
+	}
+p.footer
+	{
+		font-size:9pt;
+	}
+p.indcap
+	{
+		font-size:9pt;
+		clear:both;
+		text-align:right;
+	}
+.cite-source
+	{
+	  font-size:7pt;
+	  font-variant:small-caps;
+	}
+.cite-source:before
+	{
+	  content: "(";
+	}
+.cite-source:after
+	{
+	  content:")";
+	}
+.cite-source a, .cite-source a:hover
+	{
+	 background:none;
+	 text-decoration:none;
+	 color:black;
+	 border-bottom: 1px dotted black;
+	}
+#contribute, #contribute li
+	{
+	  font-size:8pt;
+	  display:inline;
+	  list-style-type: none;
+	}
+#contribute li:after
+	{
+	  content: "; ";
+	}
+#contribute li.last:after
+	{
+	  content: ".";
+	}
+.linkout, a .linkout
+	{
+	  vertical-align:middle;
+	  border:none;
+	  width:16px;
+	  height:16px;
+	}
+.lo_anchor:link, .lo_anchor:visited, .lo_anchor:hover
+	{
+	  background:none !important;
+	}
+.noticebox
+	{
+	   float:right; 
+	   border: 1px solid black; 
+	   margin: 1em; 
+	   padding: .5em;
+	}
+
+/*
+***********************
+Content Table
+***********************
+*/
+
+input[type="text"]:focus, textarea:focus
+	{
+		background:#F7F8EC;
+	}
+input.search:focus, textarea.valued:focus
+	{
+		background:#F7F8EC;
+		/*content:"";*/
+		/*possible clearing?*/
+	}
+input, textarea, select
+	{
+
+		font-family:Calibri,Times,Tahoma, Verdana, Arial, Helvetica;
+	}
+.error
+	{
+		background:#FF7568;
+		font-weight:bold;
+		font-color:red;
+		border:1px solid black;
+	}
+span.footsup
+	{
+		/*
+		removed :before selector after .footsup, and inserted [N] into code.
+		Update to roman numerals when CSS3 has wider implementation.
+		*/
+		content:counter(footcount,lower-roman);
+		counter-increment:footcount;
+	}
+span.footlow
+	{
+		/*
+		removed :before selector after .footsup, and inserted [N] into code.
+		Update to roman numerals when CSS3 has wider implementation.
+		*/
+		content:counter(footcount2,lower-roman) ")";
+		counter-increment:footcount2;
+	}
+span.nowrap
+	{
+		white-space:nowrap;
+	}
+li.footnote
+	{
+		font-size:9pt;
+	}
+#searchbox {
+    text-align:right;
+    position:fixed;
+    right:0;
+    font-size:9pt;
+    padding: 5px;
+    background:white;
+    border:1px solid black;
+    border-right:0;
+}
+#searchbox p {
+    max-width: 25em;
+    float:right;
+    clear:both;
+}
+#searchbox input[type='button'] {
+    float:left;
+}
+/*
+**********************
+Phylogenetic Navigation
+**********************
+*/
+table.phylo
+	{
+		margin-left:12px;
+		margin-right:auto;
+		margin-top:0px;
+		margin-bottom:0px;
+		border-style:none;
+		border-width:0px;
+		border:none;
+		border-collapse:collapse;
+		padding:3px;
+		padding-top:0px;
+		padding-bottom:0px;
+		
+	}
+td.phylo1
+	{
+		padding:5px;
+	}
+td.close
+	{
+		padding:5px;
+		vertical-align:top;
+	}
+tr.close
+	{
+		background-image:url('../images/phylobottom.png');
+		background-repeat:no-repeat;
+		background-position:top left;
+		padding:0px;
+		margin:0px;
+	}
+tr.phyloline
+	{
+		background-image:url('../images/phylobar.png');
+		background-repeat:repeat-y;
+		background-position:top left;
+		padding:0px;
+		margin:0px;
+	}
+ul.phyloart
+	{
+		margin:0px;
+		margin-left:1em;
+	}
+/* td.phylo1:hover,td.close:hover
+	{
+	  background: url('../images/expandbg.png') repeat-y;
+	} */
+ul.cite-list
+	{
+		margin-left:-3em;
+	}
+ul.cite-list, .cite-list li
+	{
+		display:inline;
+		list-style-type:none;
+		font-size:9pt;
+	}
+.cite-list li:after
+	{
+		content:";";
+	}
+.cite-list li.last:before
+	{
+		content:" and ";
+	}
+.cite-list li.last:after
+	{
+		content:".";
+	}
+#citation
+	{
+	  width: 30em;
+	}
+#submitter div
+	{
+	  margin:1em;
+	}
+table.phylo a
+	{
+	  font-weight: 500;
+	}
+.code, code 
+        {
+	  background:#D8D8D8;
+	  font-family:consolas,lucida console, courier new, terminal;
+	  margin-left:1.5em;
+	  width:600px;
+	}
+p .code { margin: 0; }
+code 
+         {
+	  padding: .5em;
+	  display:block;
+	 }
+.noname
+	{
+	  font-size: 9pt;
+	  font-style: italic;
+	  text-transform:uppercase;
+	}
+.highlight
+        {
+          background: yellow;
+        }
+a .highlight:after
+	{
+	  content: " \bb";
+	}
+a .highlight
+        {
+	  text-decoration:underline;
+	}
+.found
+	{
+	  background: url('../images/foundbg.png') repeat-y;
+	}
+.edagger
+	{
+	  border:0 none;
+	  width:5px;
+	  height:15px;
+	}
+#permalink
+	{
+	 width:10em;
+	}
+tt {display: none;}
