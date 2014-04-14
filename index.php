@@ -1,16 +1,22 @@
 <?php
 ob_start( 'ob_gzhandler' );
-// CC-BY-SA Philip Kahn.
-// If you found this page using a search engine, view the full page
-// at http://phylogeny.revealedsingularity.net
+/***
+ * GPLv3 Philip Kahn.
+ * Full license: 
+ * https://github.com/tigerhawkvok/Phylogeny/blob/master/LICENSE.md
+ *
+ * If you found this page using a search engine, view the full page
+ * at http://phylogeny.revealedsingularity.net
+ *
+ * Source code available at 
+ * https://github.com/tigerhawkvok/Phylogeny
+ ***/
 
 $update_date = "2013/05/31";
 $update_content = "Revised Paraves after Godefroidt et al. 2013 and several others"; //Note "Updated" is placed before text.
 
 ?>
-<!DOCTYPE
- html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
- "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!doctype html>
 
 <html   xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <head>
@@ -1401,7 +1407,7 @@ openphylo("Vertebrata");
                                                                        openphylo("(Unnamed)");
                                                                          openphylo("Modern Humans (H. sapiens)<tt>homo</tt>");
                                                                            //Find authority: h. idaltu, h. floresiensis
-                                                                         closephylo("Neanderthals (H. neanderthalensis)<tt>homo</tt>");
+                                                                         closephylo("$extinct Neanderthals (H. neanderthalensis)<tt>homo</tt>");
                                                                        closephylo("$extinct H. ergaster<tt>homo</tt>");
                                                                      closephylo("$extinct H. rudolfensis<tt>homo</tt>");
                                                                    closephylo("$extinct H. habilis<tt>homo</tt>");
@@ -1522,7 +1528,7 @@ openphylo("Vertebrata");
                                      singlephylo("Hyraxes (Procaviidae)");
                                    buildendoutgroup("Sirenia");
                                      openphylo("Manatees (Trichechidae)");
-                                     closephylo("Dugong (Dugongidae");
+                                     closephylo("Dugong (Dugongidae)");
                                    closeoutgroup();
                                  buildendoutgroup("Proboscidea");
                                    openphylo("Elephantiformes");
