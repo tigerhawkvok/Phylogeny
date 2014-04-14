@@ -204,6 +204,8 @@ develop-eggs/
 # Installer logs
 pip-log.txt
 
+error_log
+
 # Unit test / coverage reports
 .coverage
 .tox
