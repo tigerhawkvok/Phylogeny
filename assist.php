@@ -31,6 +31,9 @@ You can use the form on this page to contribute new or revised
 	href='coding.php'>check the API documentation</a>.
   </p>
   <p>
+  You can also now <a href='https://github.com/tigerhawkvok/Phylogeny'>directly contribute on GitHub!</a>
+  </p>
+  <p>
 	Please be sure at least one group already online is included
 	as an outgroup to your contribution.  If you wish to contribute
 	search tags, it is simplest to paste a block of code from the 
