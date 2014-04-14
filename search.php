@@ -22,10 +22,12 @@ $file_dir='http://phylogeny.revealedsingularity.net/';
 //$file_loc = $file_dir . $file_name;
 $file_loc=$file_name;
 
+/*
 if($_REQUEST['t'] == "arrayify")
   {
     returnAjax(arrayify("./".$file_name));
   }
+*/
 
 ?>
 <!DOCTYPE
