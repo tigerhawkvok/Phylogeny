@@ -1,24 +1,45 @@
 <?php
 ob_start( 'ob_gzhandler' );
 ?>
-<!DOCTYPE
- html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
- "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
-<html   xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <title>Phylogeny Search</title>
-    <link rel='stylesheet' title='Phylogeny Site (Default)' href='layout/main.css' media='screen' />
 <?php
 
 include('tools/toolkit.inc');
+
+function returnAjax($data)
+{
+  if(!is_array($data)) $data=array($data);
+  header('Cache-Control: no-cache, must-revalidate');
+  header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+  header('Content-type: application/json');
+  print json_encode($data);//,JSON_FORCE_OBJECT);
+  exit();
+}
+
 
 $file_name = 'index_source.txt';
 $file_dir='http://phylogeny.revealedsingularity.net/';
 //$file_loc = $file_dir . $file_name;
 $file_loc=$file_name;
 
+if($_REQUEST['t'] == "arrayify")
+  {
+    returnAjax(arrayify("./".$file_name));
+  }
+
+?>
+<!DOCTYPE
+  html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+  <html   xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+                                                 <head>
+                                                 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+                                                 <title>Phylogeny Search</title>
+                                                 <link rel='stylesheet' title='Phylogeny Site (Default)' href='layout/main.css' media='screen' />
+
+
+<?php
 if($_REQUEST['search']!="") $_POST['search']=$_REQUEST['search'];
 
 function microtime_float()
@@ -52,21 +73,18 @@ function array_find_key($needle, $haystack)
 function arrayify ($file)
 {
  $contents = file_get_contents($file);
+ $tmp_array=array();
  $doc_array=array();
- $pos = strpos($contents,"\n");
- while($pos !== false)
-  {
-    $pos = strpos($contents,"\n");
-    if ($pos !== false)
-      {
-        $doc_array[] = substr($contents,0,$pos);
-        $contents = substr($contents,$pos+1);
-      }
-  }
+ $tmp_array=explode("\n",$contents);
+ // Possibly run this by looking at the XML travel
+ foreach($tmp_array as $line)
+   {
+     $doc_array[] = trim($line);
+   }
  $top = array_find_key("TOP_ROOT_BREAK",$doc_array);
  $bottom = array_find_key("END_PHYLO_BREAK",$doc_array);
  $nodecount=$bottom[1]-$top[1];
- echo "\n\n<!-- FINDERSTRING bottom-line: '" . $bottom[1] . "' and top: '" . $top[1] . "' for " . $nodecount . " total nodes-->\n\n";
+// echo "\n\n<!-- FINDERSTRING bottom-line: '" . $bottom[1] . "' and top: '" . $top[1] . "' for " . $nodecount . " total nodes-->\n\n";
  array_splice($doc_array,$bottom[1]);
  $doc_array=array_slice($doc_array, $top[1]);
  return $doc_array;
@@ -86,9 +104,9 @@ function handle_search($searchstring, $document)
      $from_bottom = array_reverse($trim_end);
      foreach ($from_bottom as $line)
       {
-        if (strpos($line,"}") !==FALSE) 
+        if (strpos($line,"}") !==FALSE)
           {
-            if ($bcounter<1) 
+            if ($bcounter<1)
               {
                 $bcounter=1;
 	        $counter=0;
@@ -96,7 +114,7 @@ function handle_search($searchstring, $document)
 	    else $bcounter++;
           }
         if (strpos($line,"{") !==FALSE) $bcounter--;
-        if ($bcounter < 0) { /**** Begin bcounter ***/ 
+        if ($bcounter < 0) { /**** Begin bcounter ***/
         if (strpos($line,"close") !==FALSE)
           {
             $counter--;
@@ -156,7 +174,7 @@ function parse_link($key,$document,$linktrail)
  $close_tagstring = "</a>";
  $end_tagstring = "'>";
  global $siteurl;
- 
+
  $res_start = strpos($document[$key],"(\"") +2; //"
  $qextinct = strpos($document[$key],"\$extinct ");
  if ($qextinct !== FALSE) $res_start = $res_start+9;
@@ -227,7 +245,7 @@ function searcher($searchstring,$file)
  $doc_array=arrayify($file);
  $rcount = 0;
  $result = array_find_key($searchstring,$doc_array);
- if ($result === false) 
+ if ($result === false)
   {
     $todaystring = intval(date("Ymd"));
     if (file_exists("sourced/$todaystring")===false)
@@ -272,7 +290,7 @@ function permalinker($searchstring,$file)
 {
  $doc_array=arrayify($file);
  $rcount = 0;
- 
+
  $realsearch = $searchstring;
 
  $poly = strpos($searchstring,"*");
@@ -286,7 +304,7 @@ function permalinker($searchstring,$file)
     }
 
  $result = array_find_key($realsearch,$doc_array);
- 
+
  if ($result === false)
   {
     echo "  </head>
@@ -300,7 +318,7 @@ function permalinker($searchstring,$file)
 The true result should always be the first result, as deeper nodes are more specific ones.
 Otherwise, the results will have to be looped until a precise equality is reached.
   */
- $trail=handle_search($result[0],$doc_array); 
+ $trail=handle_search($result[0],$doc_array);
  $linkstring=parse_link_head($result[1],$doc_array,$trail);
  echo "<meta http-equiv='refresh' content='0;url=$linkstring' />
   </head>
@@ -342,8 +360,8 @@ Otherwise, the results will have to be looped until a precise equality is reache
 	   $time_end = microtime_float();
 	   $time = round($time_end - $time_start,4);
 	   echo "<p class='footer' style='background:#f0f7f9;'>
-		 If you didn't find what you want, check if your word is an irregular plural, 
-		 such as 'wallaby' to 'wallabies'. If you are unsure of your spelling, try a 
+		 If you didn't find what you want, check if your word is an irregular plural,
+		 such as 'wallaby' to 'wallabies'. If you are unsure of your spelling, try a
 		 shorter sub-phrase, such as 'cimo' instead of 'Cimoliasauridae'.<br/>
 		 Search completed in $time seconds.</p>";
 	  }
@@ -358,7 +376,7 @@ Otherwise, the results will have to be looped until a precise equality is reache
       </form>
       <?php
 	 include('tools/footerlinks.inc');
-	 } /* end permalink block */ 
+	 } /* end permalink block */
 	     ?>
     </div>
   </body>

@@ -3,5 +3,5 @@
 	[ <a href='search.php'>Search</a> ] &mdash;
 	[ <a href='assist.php'>Contribute</a> ] &mdash;
 	[ <a href='coding.php'>API</a> ] &mdash; 
-	[ <a href='source.php' <?php echo $newwindow; ?>>Source Code</a> ]
+  [ <a href='https://github.com/tigerhawkvok/Phylogeny/blob/master/index.php' <?php echo $newwindow; ?>>Source Code</a> ]
       </p>
