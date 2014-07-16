@@ -2,18 +2,18 @@
 @ob_start( 'ob_gzhandler' );
 /***
  * GPLv3 Philip Kahn.
- * Full license: 
+ * Full license:
  * https://github.com/tigerhawkvok/Phylogeny/blob/master/LICENSE.md
  *
  * If you found this page using a search engine, view the full page
  * at http://phylogeny.revealedsingularity.net
  *
- * Source code available at 
+ * Source code available at
  * https://github.com/tigerhawkvok/Phylogeny
  ***/
 
-$update_date = "2013/05/31";
-$update_content = "Revised Paraves after Godefroidt et al. 2013 and several others"; //Note "Updated" is placed before text.
+$update_date = "2014/07/16";
+$update_content = "Panarthropoda"; //Note "Updated" is placed before text.
 
 ?>
 <!doctype html>
@@ -40,7 +40,7 @@ $update_content = "Revised Paraves after Godefroidt et al. 2013 and several othe
 ?>
 
     <link title="Phylogeny" href="<?php echo $siteurl; ?>/R2S_OpenSearch_Phylogeny.xml" type="application/opensearchdescription+xml" rel="search"/>
- 
+
 <?php
 $nop=0;
 $ncl=0;
@@ -58,7 +58,7 @@ function tester($group)
 {
  global $htest1,$htest2;
  $htest3 = "? " . $htest1;
- $tagged = strpos($group,"<tt>"); 
+ $tagged = strpos($group,"<tt>");
  $para = strpos($group,"*");
  if ($para !== false)
   {
@@ -67,7 +67,7 @@ function tester($group)
    $group = substr($group,0,$para);
   }
  if( $tagged !== FALSE) $group = substr($group,0,$tagged);
- if ($group == $_REQUEST['h'] || $group == $htest1 || $group == $htest2 || $group == $htest3) 
+ if ($group == $_REQUEST['h'] || $group == $htest1 || $group == $htest2 || $group == $htest3)
    {
     return true;
     break;
@@ -81,7 +81,7 @@ function openphylo($ingroup)
   {
     global $nop;
     if ($ingroup=="(Unnamed)") $ingroup="<span class='noname'>$ingroup</span>";
-    if(tester($ingroup)) 
+    if(tester($ingroup))
       {
         $ingroup = "<span class='highlight'>$ingroup</span>";
         $backclass = " found";
@@ -102,7 +102,7 @@ function closephylo($outgroup)
   {
     global $ncl,$nop;
     $nop--;
-    if(tester($outgroup)) 
+    if(tester($outgroup))
       {
 	$outgroup = "<span class='highlight'>$outgroup</span>";
         $backclass = " found";
@@ -164,7 +164,7 @@ function buildendoutgroup($outgroup)
 global $nop;
 $nop--;
 if ($outgroup=="(Unnamed)") $outgroup="<span class='noname'>$outgroup</span>";
-    if(tester($outgroup)) { 
+    if(tester($outgroup)) {
 	$outgroup = "<span class='highlight'>$outgroup</span>";
         $backclass = " found";
       }
@@ -340,7 +340,7 @@ function expandAll($clade_counter)
 
 function spcheck($ccn,$trees)
   {
-    if ($_REQUEST['$ccn']!="" && $_REQUEST['subpages']=='true') 
+    if ($_REQUEST['$ccn']!="" && $_REQUEST['subpages']=='true')
       {
         echo "<form method='post' action='?d=t&subpages=true'><input type='hidden' value='" . $trees . "'> <input type='submit' value='Pop Out current node'></form>";
       }
@@ -404,7 +404,7 @@ $phylostitch=requestcheck();
 	    source is the "Tree of Life" project, which itself cites its
 	    phylogenies; however, due to its dynamical nature, it is the
 	    last resource used.
-	  </p>  
+	  </p>
 	  <p>
 	    A resolved phylogeny, even if speculative, is given priority
 	    to a phylogeny which contains polytomies.
@@ -432,7 +432,7 @@ $phylostitch=requestcheck();
 	  </p>
 	</div>
 	<p>&nbsp;</p>
-	
+
 	<!-- Print Layout Warning -->
 	<?php
 	   function curPageURL() {
@@ -455,7 +455,7 @@ $phylostitch=requestcheck();
 
 
 	<!-- IMPORTANT: CLADE COLLAPSE COUNTER. For various functions and allows "Expand All" link. -->
-	<?php 
+	<?php
 	   $cc=75;  /// Number of collapses.  MUST be manually entered, and >= true collapse number.
 /* $expandall="$siteurl/?";
 	   $i_expcounter = 1;
@@ -485,12 +485,12 @@ if ($_REQUEST['expand']=="TRUE")
 	<!-- End -->
 
 	<p style='text-align:right;'>
-	  Quicklinks: 
+	  Quicklinks:
 	  <a href='<?php echo $siteurl; ?>'>Collapse All</a>
-	  | 
-	  <a href='?expand=TRUE'>Expand All</a> 
 	  |
-	  <?php if ($_REQUEST['st']=='print') { 
+	  <a href='?expand=TRUE'>Expand All</a>
+	  |
+	  <?php if ($_REQUEST['st']=='print') {
 	    $page=curPageURL();
 	    $pageurllen=strlen($page);
 	    $pageurllen=$pageurllen - 9;
@@ -522,7 +522,7 @@ if ($_REQUEST['expand']=="TRUE")
 	     $shorturl = @file_get_contents("http://is.gd/api.php?longurl=$permaurl");
 	     $styleoverride = "";
 	     if(@strpos($shorturl,"http://is.gd") !== false && $_REQUEST['fullurl']!="TRUE") $p_url_out = $shorturl;
-	     else 
+	     else
 	      {
 	       $p_url_out = $permaurl;
 	      }
@@ -588,7 +588,7 @@ openphylo("Vertebrata");
                               	  openphylo("Coelurosauria<tt>feathers</tt>");
 				    openphylo("(Unnamed)");
                                	     openphylo("Maniraptora<tt>raptors</tt>");
-				     openphylo("(Unnamed)"); // Alvarezsauridae 
+				     openphylo("(Unnamed)"); // Alvarezsauridae
 				     openphylo("Paraves");
 				       openphylo("Eumaniraptora<tt>Deinonychosauria</tt>");
 				       openphylo("(Unnamed)");
@@ -1184,7 +1184,7 @@ openphylo("Vertebrata");
                                      openphylo("Ferungulata");
                                        openphylo(cladecollapse("Cetartiodactyla",26));
                                        if ($_REQUEST['26']!="")
-                                       {      
+                                       {
                                          openphylo("Selenodontia");
                                            openphylo("Neoselenodontia");
                                              openphylo("Tylopoda");
@@ -1208,7 +1208,7 @@ openphylo("Vertebrata");
                                                                     closephylo("Neobalaenidae");
                                                                   closephylo("Balaenidae");
                                                                  buildendoutgroup("Odontoceti");
-                                                                   openphylo("(Unnamed)"); 
+                                                                   openphylo("(Unnamed)");
                                                                      openphylo("Delphinida");
                                                                        openphylo("(Unnamed)");
                                                                          openphylo("Delphinoidea");
@@ -1645,7 +1645,7 @@ openphylo("Vertebrata");
                           closephylo("$extinct Deltatheroida");
 			   }
                            closeoutgroup();
-			 
+
                          buildendoutgroup("Prototheria<tt>monotremata,monotreme</tt>");
                            openphylo("Platypus (Ornithorynchidae)");
                            closephylo("Echidnas (Tachyglossidae)");
@@ -1786,7 +1786,7 @@ openphylo("Vertebrata");
 		      closephylo("$extinct <em>Metaxygnathus</em>");
 	    closeoutgroup();
 	     }
-	
+
             closephylo("Lungfishes (Dipnoi)");
          buildendoutgroup(cladecollapse("Ray-finned Fishes (Actinopterygii)",47));
 	 if ($_REQUEST['47']!="")
@@ -1814,102 +1814,106 @@ closephylo("Tunicata");
 closephylo("Sea stars, urchins, and cucumbers (Echinodermata)");
 buildendoutgroup("Protostomes");
    openphylo("Ecdysozoa");
-     openphylo("Arthropoda");
-       openphylo(cladecollapse("Hexapoda",48));
-       if ($_REQUEST['48']!="")
-       {
-         openphylo("(Unnamed)");
+     openphylo("Panarthropoda");
+       openphylo("Arthropoda");
+         openphylo(cladecollapse("Hexapoda",48));
+         if ($_REQUEST['48']!="")
+         {
            openphylo("(Unnamed)");
-             openphylo("Insecta (Entognatha)<tt>insects</tt>");
-               openphylo("Dicondylia");
-                 openphylo("Pterygota");
-                   openphylo("(Unnamed)");
-                     openphylo(cladecollapse("Neoptera",49));
-                     if ($_REQUEST['49']!="")
-                     {
-                       openphylo("Endopterygota");
-                         openphylo("(Unnamed)");
-                           openphylo("Coleoptera<tt>beetle,beetles</tt>");
-                           buildendoutgroup("Neuropterida");
-                             openphylo("Lacewings (Neuroptera)");
-                             buildoutgroup("Dobsonflies (Megaloptera)");
-                             closephylo("Snakeflies (Raphidioptera)");
-                           closeoutgroup();
-                         buildoutgroup("(Unnamed)");
-                           openphylo("Hymenoptera<tt>bee,ant,wasp</tt>");
-                           buildendoutgroup("(Unnamed)");
-                             openphylo("Amphiesmenoptera");
-                               openphylo("Lepidoptera<tt>butterfly,butterflies,moth</tt>");
-                               closephylo("Caddisflies (Trichoptera)");
-                             buildendoutgroup("Antliophora");
-                               openphylo("(Unnamed)");
-                                 openphylo("Fleas (Siphonaptera)");
-                                 closephylo("Scorpionflies (Mecoptera)*");
-                               closephylo("Flies (Diptera)");
+             openphylo("(Unnamed)");
+               openphylo("Insecta (Entognatha)<tt>insects</tt>");
+                 openphylo("Dicondylia");
+                   openphylo("Pterygota");
+                     openphylo("(Unnamed)");
+                       openphylo(cladecollapse("Neoptera",49));
+                       if ($_REQUEST['49']!="")
+                       {
+                         openphylo("Endopterygota");
+                           openphylo("(Unnamed)");
+                             openphylo("Coleoptera<tt>beetle,beetles</tt>");
+                             buildendoutgroup("Neuropterida");
+                               openphylo("Lacewings (Neuroptera)");
+                               buildoutgroup("Dobsonflies (Megaloptera)");
+                               closephylo("Snakeflies (Raphidioptera)");
                              closeoutgroup();
+                           buildoutgroup("(Unnamed)");
+                             openphylo("Hymenoptera<tt>bee,ant,wasp</tt>");
+                             buildendoutgroup("(Unnamed)");
+                               openphylo("Amphiesmenoptera");
+                                 openphylo("Lepidoptera<tt>butterfly,butterflies,moth</tt>");
+                                 closephylo("Caddisflies (Trichoptera)");
+                               buildendoutgroup("Antliophora");
+                                 openphylo("(Unnamed)");
+                                   openphylo("Fleas (Siphonaptera)");
+                                   closephylo("Scorpionflies (Mecoptera)*");
+                                 closephylo("Flies (Diptera)");
+                               closeoutgroup();
+                             closeoutgroup();
+                           closephylo("Twisted-wing parasites (Strepsiptera)");
+                         buildoutgroup("Paraneoptera");
+                           openphylo("Condylognatha");
+                             openphylo("Hemiptera");
+                             closephylo("Thrips (Thysanoptera)");
+                           buildendoutgroup("Psocodea");
+                             openphylo("Bark lice (Psocoptera)*");
+                             closephylo("Lice (Phthiraptera)");
                            closeoutgroup();
-                         closephylo("Twisted-wing parasites (Strepsiptera)");
-                       buildoutgroup("Paraneoptera");
-                         openphylo("Condylognatha");
-                           openphylo("Hemiptera");
-                           closephylo("Thrips (Thysanoptera)");
-                         buildendoutgroup("Psocodea");
-                           openphylo("Bark lice (Psocoptera)*");
-                           closephylo("Lice (Phthiraptera)");
+             //extra indent from collapsed node
+                           buildendoutgroup("Polyneoptera");
+                             openphylo("Dictyoptera");
+                               openphylo("(Unnamed)");
+                                 openphylo("Termites (Isoptera)");
+                                 closephylo("Cockroaches (Blattodea)");
+                               closephylo("Mantids (Mantodea)");
+           buildendoutgroup("Anartioptera");
+              openphylo("Polyplecoptera");
+               singleoutgroup("Plecopterida");
+           openphylo("Mystroptera");
+             openphylo("Zoroptera");
+               singlephylo("Zorotypidae");
+             closephylo("Webspinners (Embiidina)");
+           closephylo("Stoneflies (Plecoptera)");
+               closeoutgroup();
+               buildendoutgroup("Polyorthoptera");
+               openphylo("Dermapterida");
+           singlephylo("Earwigs (Dermaptera)");
+               buildendoutgroup("Orthopterida");
+                 openphylo("Notopterodea");
+             singleoutgroup("Notoptera");
+               openphylo("Rock Crawlers (Grylloblattodea)");
+                 singlephylo("Grylloblattidae");
+               buildendoutgroup("Gladiators (Mantophasmatodea)");
+                 singlephylo("Mantophasmatidae");
+               closeoutgroup();
+             closeoutgroup();
+                 buildendoutgroup("Panorthoptera");//
+                   openphylo("Holophasmatodea");
+                     singlephylo("Walking Sticks (Phasmatodea)");
+                   closephylo("Grasshoppers, Crickets, and Katydids (Orthoptera)");
+                 closeoutgroup();
+               closeoutgroup();
+             closeoutgroup();
+           closeoutgroup();
+           //extra indent from collapsed node
                          closeoutgroup();
-		       //extra indent from collapsed node
-                         buildendoutgroup("Polyneoptera");
-                           openphylo("Dictyoptera");
-                             openphylo("(Unnamed)");
-                               openphylo("Termites (Isoptera)");
-                               closephylo("Cockroaches (Blattodea)");
-                             closephylo("Mantids (Mantodea)");
-			   buildendoutgroup("Anartioptera");
-			      openphylo("Polyplecoptera");
-			       singleoutgroup("Plecopterida");
-				 openphylo("Mystroptera");
-				   openphylo("Zoroptera");
-				     singlephylo("Zorotypidae");
-				   closephylo("Webspinners (Embiidina)");
-				 closephylo("Stoneflies (Plecoptera)");
-			       closeoutgroup();
-  			     buildendoutgroup("Polyorthoptera");
-			       openphylo("Dermapterida");
-				 singlephylo("Earwigs (Dermaptera)");
-			       buildendoutgroup("Orthopterida");
-			         openphylo("Notopterodea");
-				   singleoutgroup("Notoptera");
-				     openphylo("Rock Crawlers (Grylloblattodea)");
-				       singlephylo("Grylloblattidae");
-				     buildendoutgroup("Gladiators (Mantophasmatodea)");
-				       singlephylo("Mantophasmatidae");
-				     closeoutgroup();
-				   closeoutgroup();
-			         buildendoutgroup("Panorthoptera");//
-			           openphylo("Holophasmatodea");
-			             singlephylo("Walking Sticks (Phasmatodea)");
-			           closephylo("Grasshoppers, Crickets, and Katydids (Orthoptera)");
-			         closeoutgroup();
-			       closeoutgroup();
-			     closeoutgroup();
-			   closeoutgroup();
-			   //extra indent from collapsed node
-                       closeoutgroup();
-                     }
-                     closephylo("Dragonflies (Odonata)");
-                   closephylo("Mayflies (Ephemeroptera)");
-                 closephylo("Silverfish (Zygentoma)");
-               closephylo("Bristletails (Archaeognatha)");
-             closephylo("Diplura");
-           closephylo("Springtails (Collembola)");
-         closephylo("Protura");
-       }
-       buildoutgroup("Chelicerata");
-         openphylo("Arachnida<tt>spiders,scorpions</tt>");
-         closephylo("Xiphosura");
-       buildoutgroup("Myriapoda<tt>centipedes,millipedes</tt>");
-       buildoutgroup("Crustacea<tt>crustacean,shrimp,lobster,crab</tt>");
-       closephylo("$extinct Trilobitomorpha");
+                       }
+                       closephylo("Dragonflies (Odonata)");
+                     closephylo("Mayflies (Ephemeroptera)");
+                   closephylo("Silverfish (Zygentoma)");
+                 closephylo("Bristletails (Archaeognatha)");
+               closephylo("Diplura");
+             closephylo("Springtails (Collembola)");
+           closephylo("Protura");
+         }
+         buildoutgroup("Chelicerata");
+           openphylo("Arachnida<tt>spiders,scorpions</tt>");
+           closephylo("Xiphosura");
+         buildoutgroup("Myriapoda<tt>centipedes,millipedes</tt>");
+         buildoutgroup("Crustacea<tt>crustacean,shrimp,lobster,crab</tt>");
+         closephylo("$extinct Trilobitomorpha"); # End arthropods
+       buildoutgroup("Onychophora<tt>velvet worm</tt>");
+       buildoutgroup("? $extinct Anomalocaridae");
+       closephylo("Tardigrada<tt>water bear,tardigrade</tt>");
      closephylo("Roundworms (Nematoda)");
    buildendoutgroup("Lophotrochozoa");
      openphylo("(Unnamed)");
@@ -1957,6 +1961,9 @@ END_PHYLO_BREAK
       </li>
       <li>
 	Churakov, G et al. 2009 <span class='cite-source'>DOI <a href='http://dx.doi.org/10.1101/gr.090647.108'>10.1101/gr.090647.108</a></span>
+      </li>
+      <li>
+        Cong, P et al. 2014 <span class='cite-source'>DOI: <a href='http://dx.doi.org/10.1038/nature13486'>10.1038/nature13486</a></span>
       </li>
       <li>
 	Flynn, JJ et al. 1998 <span class='cite-source'>DOI <a href='http://dx.doi.org/10.1006/mpev.1998.0504'>10.1006/mpev.1998.0504</a></span>
@@ -2029,6 +2036,9 @@ END_PHYLO_BREAK
       </li>
       <li>
         Taylor, MP 2009 <span class='cite-source'>Journal: Journal of Vertebrate Paleontology</span> <a href='http://www.miketaylor.org.uk/dino/pubs/taylor2009/Taylor2009-brachiosaurus-and-giraffatitan.pdf' <?php echo $linkout_closeanchor; ?>
+      </li>
+      <li>
+        Telford, MJ et al. 2008 <span class='cite-source'>DOI: <a href='http://dx.doi.org/10.1098/rstb.2007.2243'>10.1098/rstb.2007.2243</a></span>
       </li>
       <li>
 	Turner, AH et al. 2012 <span class='cite-source'>DOI: <a href='http://dx.doi.org/10.1206/748.1'>10.1206/748.1</a></span>
